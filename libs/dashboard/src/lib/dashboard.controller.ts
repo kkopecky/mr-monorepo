@@ -7,12 +7,20 @@ export class DashboardController {
 
   @Get()
   getAll() {
-    return 'dashboard data';
+    return {
+      dashboards: [
+        { id: 1, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 2, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 3, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 4, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 5, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+      ],
+    };
   }
 
   @Get(':id')
   getOne(@Param('id') id: string): string {
-    return `This action returns a #${id} cat`;
+    return `This action returns a #${id} dashboard`;
   }
 
   @Post()

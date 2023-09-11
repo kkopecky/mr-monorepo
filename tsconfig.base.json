@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mr-monorepo/dashboard": ["libs/dashboard/src/index.ts"]
+      "@mr-monorepo/dashboard": ["libs/dashboard/src/index.ts"],
+      "@mr-monorepo/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
