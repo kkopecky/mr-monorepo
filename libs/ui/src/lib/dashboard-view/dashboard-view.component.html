@@ -1,1 +1,6 @@
 <p>dashboard-view works!</p>
+<ul>
+  <li *ngFor="let stock of dashboard?.stocks">
+    <mr-monorepo-stock-view [stock]="stock"></mr-monorepo-stock-view>
+  </li>
+</ul>

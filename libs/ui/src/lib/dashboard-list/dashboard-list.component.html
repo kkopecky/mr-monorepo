@@ -1,1 +1,8 @@
-<p>dashboard-list works!</p>
+<ul class="dashboard-list">
+  <li *ngFor="let dashboard of dashboards">
+    <a [routerLink]="['/dashboard', dashboard.id]">
+      Name: <span>{{ dashboard.name }}</span> Stocks:
+      <span *ngFor="let stock of dashboard.stocks">{{ stock }}</span>
+    </a>
+  </li>
+</ul>

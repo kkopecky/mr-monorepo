@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { DashboardService } from './dashboard.service';
 
-@Controller('dashboard')
+@Controller('dashboards')
 export class DashboardController {
   constructor(private dashboardService: DashboardService) {}
 
@@ -9,18 +9,18 @@ export class DashboardController {
   getAll() {
     return {
       dashboards: [
-        { id: 1, stocks: ['AAPL', 'GOOG', 'TSLA'] },
-        { id: 2, stocks: ['AAPL', 'GOOG', 'TSLA'] },
-        { id: 3, stocks: ['AAPL', 'GOOG', 'TSLA'] },
-        { id: 4, stocks: ['AAPL', 'GOOG', 'TSLA'] },
-        { id: 5, stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 1, name: 'Dasboard1', stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 2, name: 'Dasboard2', stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 3, name: 'Dasboard3', stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 4, name: 'Dasboard4', stocks: ['AAPL', 'GOOG', 'TSLA'] },
+        { id: 5, name: 'Dasboard5', stocks: ['AAPL', 'GOOG', 'TSLA'] },
       ],
     };
   }
 
   @Get(':id')
-  getOne(@Param('id') id: string): string {
-    return `This action returns a #${id} dashboard`;
+  getOne(@Param('id') id: string): any {
+    return { id, name: 'Dasboard1', stocks: ['AAPL', 'GOOG', 'TSLA'] };
   }
 
   @Post()
@@ -29,8 +29,8 @@ export class DashboardController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string) {
-    return `This action updates a #${id} dashboard`;
+  update(@Param('id') id: string): any {
+    return { id, name: 'Dasboard1', stocks: ['AAPL', 'GOOG', 'TSLA'] };
   }
 
   @Delete(':id')
