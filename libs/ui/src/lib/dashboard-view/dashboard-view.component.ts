@@ -20,7 +20,6 @@ export class DashboardViewComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
-      console.log(params['id']);
       this.loadDashboardById(params['id']);
     });
   }

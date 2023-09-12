@@ -4,7 +4,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { UiModule } from '@mr-monorepo/ui';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,7 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     UiModule,
-    NgbModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

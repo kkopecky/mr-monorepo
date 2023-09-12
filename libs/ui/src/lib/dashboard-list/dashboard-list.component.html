@@ -1,8 +1,19 @@
 <ul class="dashboard-list">
   <li *ngFor="let dashboard of dashboards">
-    <a [routerLink]="['/dashboard', dashboard.id]">
-      Name: <span>{{ dashboard.name }}</span> Stocks:
-      <span *ngFor="let stock of dashboard.stocks">{{ stock }}</span>
-    </a>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ dashboard.name }}</mat-card-title>
+        <mat-card-subtitle>
+          {{ dashboard.stocks.length }} stocks
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions align="end">
+        <button mat-icon-button [routerLink]="['/dashboard', dashboard.id]">
+          <ng-icon name="heroPencilSquare"></ng-icon>
+        </button>
+        <button mat-icon-button><ng-icon name="heroTrash"></ng-icon></button>
+      </mat-card-actions>
+    </mat-card>
+    <br />
   </li>
 </ul>
